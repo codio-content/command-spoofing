@@ -4,11 +4,11 @@ Provides commands alternatives for unsupported commands, emulate outputs
 
 ## Definition
 
-Every command uses json file with match arguments to outputs
+Every command uses JSON file with match arguments to outputs
 
 ### lsusb
 
-`lsusb` provides to alternatives outputs based on file-flag `/tmp/lsusb_alternative`. if file exists
+`lsusb` provides alternative outputs based on file-flag `/tmp/lsusb_alternative`. if the file exists
 output from lsusb2.json will be shown
 
 ## Generation
@@ -31,3 +31,21 @@ Usage Examples:
 ```
 generate-json --exec=lsusb --args="-h,--help,-t,--tree,-V,--version," --append=false --output lsusb.json
 ```
+
+# Installation
+1. create a local binaries directory
+    ```bash
+    mkdir ~/bin
+    ```
+2. Get the latest release link from the Releases page and download with `wget` and extract to  `~/bin`
+    ```bash
+    wget https://github.com/codio-content/command-spoofing/releases/download/v2/commands-linux-amd64.tgz -O - | tar -zx -C ~/bin
+    ```
+3. Update the PATH environment variable to include the local `bin` if it is not included. For Bash edit `.bashrc`
+    ```bash
+    vim ~/.bashrc
+    ```
+    and add
+    ```bash
+    export PATH="${HOME}/bin:${PATH}"
+    ```
