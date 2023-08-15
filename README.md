@@ -33,19 +33,8 @@ generate-json --exec=lsusb --args="-h,--help,-t,--tree,-V,--version," --append=f
 ```
 
 # Installation
-1. create a local binaries directory
+
+1. Get the latest release link from the Releases page and download with `wget` and extract to  `~/bin`
     ```bash
-    mkdir ~/bin
-    ```
-2. Get the latest release link from the Releases page and download with `wget` and extract to  `~/bin`
-    ```bash
-    wget https://github.com/codio-content/command-spoofing/releases/download/v2/commands-linux-amd64.tgz -O - | tar -zx -C ~/bin
-    ```
-3. Update the PATH environment variable to include the local `bin` if it is not included. For Bash edit `.bashrc`
-    ```bash
-    vim ~/.bashrc
-    ```
-    and add
-    ```bash
-    export PATH="${HOME}/bin:${PATH}"
+    wget https://github.com/codio-content/command-spoofing/releases/latest/download/commands-linux-amd64.tgz -O - | sudo tar -zx -C /bin
     ```
